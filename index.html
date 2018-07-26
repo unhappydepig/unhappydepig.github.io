@@ -281,6 +281,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="unhappydepig">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="unhappydepig的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/26/MySQL数据库备份/" itemprop="url">MySQL数据库备份</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T10:00:47+08:00">
+                2018-07-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>需求：</p>
+<ol>
+<li>每天4点备份mysql数据；</li>
+<li>为节省空间，删除超过3个月的所有备份数据;</li>
+<li>删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；</li>
+</ol>
+<p>#创建shell文件</p>
+<p>vim backup_mysql.sh</p>
+<p>mysqldump -uroot -p123456 –all-databases  &gt; /data/dbdata/mysqlbak/<code>date +%Y%m%d</code>.sql<br>find /data/dbdata/mysqlbak/ -mtime +7 -name ‘<em>[1-9].sql’ -exec rm -rf {} \;<br>find /data/dbdata/mysqlbak/ -mtime +92 -name ‘</em>.sql’ -exec rm -rf {} \;</p>
+<p>#创建定时任务<br>crontab –e<br>0 4 <em> </em> *  /data/dbdata/backup_mysql.sh</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/17/记录关于技术的思考/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -561,7 +690,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -574,7 +703,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据库," />
 
 
 
@@ -94,14 +94,18 @@
 
 
 
-<meta name="keywords" content="JAVA,unhappydepig">
-<meta property="og:type" content="website">
-<meta property="og:title" content="unhappydepig的个人博客">
-<meta property="og:url" content="http://unhappydepig.com/tags/碎碎念/index.html">
+<meta name="description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL数据库备份">
+<meta property="og:url" content="http://unhappydepig.com/2018/07/26/MySQL数据库备份/index.html">
 <meta property="og:site_name" content="unhappydepig的个人博客">
+<meta property="og:description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-26T02:03:09.697Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unhappydepig的个人博客">
+<meta name="twitter:title" content="MySQL数据库备份">
+<meta name="twitter:description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
 
 
 
@@ -130,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://unhappydepig.com/tags/碎碎念/"/>
+  <link rel="canonical" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/"/>
 
 
 
 
 
-  <title>标签: 碎碎念 | unhappydepig的个人博客</title>
+  <title>MySQL数据库备份 | unhappydepig的个人博客</title>
   
 
 
@@ -171,7 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -265,54 +269,156 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>碎碎念<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="unhappydepig">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="unhappydepig的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/17/记录关于技术的思考/" itemprop="url">
-              
-                <span itemprop="name">记录关于技术的思考</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">MySQL数据库备份</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-17T23:34:47+08:00"
-              content="2018-07-17" >
-          07-17
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T10:00:47+08:00">
+                2018-07-26
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>需求：</p>
+<ol>
+<li>每天4点备份mysql数据；</li>
+<li>为节省空间，删除超过3个月的所有备份数据;</li>
+<li>删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；</li>
+</ol>
+<p>#创建shell文件</p>
+<p>vim backup_mysql.sh</p>
+<p>mysqldump -uroot -p123456 –all-databases  &gt; /data/dbdata/mysqlbak/<code>date +%Y%m%d</code>.sql<br>find /data/dbdata/mysqlbak/ -mtime +7 -name ‘<em>[1-9].sql’ -exec rm -rf {} \;<br>find /data/dbdata/mysqlbak/ -mtime +92 -name ‘</em>.sql’ -exec rm -rf {} \;</p>
+<p>#创建定时任务<br>crontab –e<br>0 4 <em> </em> *  /data/dbdata/backup_mysql.sh</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/17/记录关于技术的思考/" rel="next" title="记录关于技术的思考">
+                <i class="fa fa-chevron-left"></i> 记录关于技术的思考
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -320,6 +426,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -549,10 +659,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
