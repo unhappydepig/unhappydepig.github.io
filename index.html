@@ -281,6 +281,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/30/MySQL-Docker大小写敏感/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="unhappydepig">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="unhappydepig的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/30/MySQL-Docker大小写敏感/" itemprop="url">MySQL[Docker]大小写敏感</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T10:50:47+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>查看当前状态<br>查看当前mysql的大小写敏感配置<br>show global variables like ‘%lower_case%’;<br>+————————+——-+<br>| Variable_name          | Value |<br>+————————+——-+<br>| lower_case_file_system | ON    |<br>| lower_case_table_names | 0     |<br>+————————+——-+<br>lower_case_file_system<br>表示当前系统文件是否大小写敏感，只读参数，无法修改。<br>ON  大小写不敏感<br>OFF 大小写敏感 </li>
+<li>编辑docker内配置文件<br>进入docker的MySQL容器<br>编辑/etc/mysql/mysql.conf.d/mysqld.cnf文件，在[mysqld]下添加如下：<br>[mysqld]<br>lower_case_table_names=1<br>保存，退出容器；</li>
+</ul>
+<p>执行sudo docker restart MySQL ，重启MySQL即可查看：</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -690,7 +814,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -703,7 +827,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

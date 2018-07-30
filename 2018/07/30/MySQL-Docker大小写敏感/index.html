@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="数据库," />
+  <meta name="keywords" content="数据库,MYSQL,Docker," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
-<meta name="keywords" content="数据库">
+<meta name="description" content="查看当前状态查看当前mysql的大小写敏感配置show global variables like ‘%lower_case%’;+————————+——-+| Variable_name          | Value |+————————+——-+| lower_case_file_system | ON    || lower_case_table_names | 0     |+———">
+<meta name="keywords" content="数据库,MYSQL,Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL数据库备份">
-<meta property="og:url" content="http://unhappydepig.com/2018/07/26/MySQL数据库备份/index.html">
+<meta property="og:title" content="MySQL[Docker]大小写敏感">
+<meta property="og:url" content="http://unhappydepig.com/2018/07/30/MySQL-Docker大小写敏感/index.html">
 <meta property="og:site_name" content="unhappydepig的个人博客">
-<meta property="og:description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
+<meta property="og:description" content="查看当前状态查看当前mysql的大小写敏感配置show global variables like ‘%lower_case%’;+————————+——-+| Variable_name          | Value |+————————+——-+| lower_case_file_system | ON    || lower_case_table_names | 0     |+———">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T02:58:08.540Z">
+<meta property="og:updated_time" content="2018-07-30T02:58:08.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL数据库备份">
-<meta name="twitter:description" content="需求：  每天4点备份mysql数据； 为节省空间，删除超过3个月的所有备份数据; 删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；  #创建shell文件 vim backup_mysql.sh mysqldump -uroot -p123456 –all-databases  &amp;gt; /data/dbdata/mysqlbak/date +%Y%m%d.sqlfin">
+<meta name="twitter:title" content="MySQL[Docker]大小写敏感">
+<meta name="twitter:description" content="查看当前状态查看当前mysql的大小写敏感配置show global variables like ‘%lower_case%’;+————————+——-+| Variable_name          | Value |+————————+——-+| lower_case_file_system | ON    || lower_case_table_names | 0     |+———">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/"/>
+  <link rel="canonical" href="http://unhappydepig.com/2018/07/30/MySQL-Docker大小写敏感/"/>
 
 
 
 
 
-  <title>MySQL数据库备份 | unhappydepig的个人博客</title>
+  <title>MySQL[Docker]大小写敏感 | unhappydepig的个人博客</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/">
+    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/30/MySQL-Docker大小写敏感/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="unhappydepig">
@@ -300,7 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL数据库备份</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL[Docker]大小写敏感</h1>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T10:00:47+08:00">
-                2018-07-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T10:50:47+08:00">
+                2018-07-30
               </time>
             
 
@@ -350,16 +350,11 @@
       
 
       
-        <p>需求：</p>
-<ol>
-<li>每天4点备份mysql数据；</li>
-<li>为节省空间，删除超过3个月的所有备份数据;</li>
-<li>删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；</li>
-</ol>
-<p>#创建shell文件</p>
-<p>vim backup_mysql.sh</p>
-<p>mysqldump -uroot -p123456 –all-databases  &gt; /data/dbdata/mysqlbak/<code>date +%Y%m%d</code>.sql<br>find /data/dbdata/mysqlbak/ -mtime +7 -name ‘<em>[1-9].sql’ -exec rm -rf {} \;<br>find /data/dbdata/mysqlbak/ -mtime +92 -name ‘</em>.sql’ -exec rm -rf {} \;</p>
-<p>#创建定时任务<br>crontab –e<br>0 4 <em> </em> *  /data/dbdata/backup_mysql.sh</p>
+        <ul>
+<li>查看当前状态<br>查看当前mysql的大小写敏感配置<br>show global variables like ‘%lower_case%’;<br>+————————+——-+<br>| Variable_name          | Value |<br>+————————+——-+<br>| lower_case_file_system | ON    |<br>| lower_case_table_names | 0     |<br>+————————+——-+<br>lower_case_file_system<br>表示当前系统文件是否大小写敏感，只读参数，无法修改。<br>ON  大小写不敏感<br>OFF 大小写敏感 </li>
+<li>编辑docker内配置文件<br>进入docker的MySQL容器<br>编辑/etc/mysql/mysql.conf.d/mysqld.cnf文件，在[mysqld]下添加如下：<br>[mysqld]<br>lower_case_table_names=1<br>保存，退出容器；</li>
+</ul>
+<p>执行sudo docker restart MySQL ，重启MySQL即可查看：</p>
 
       
     </div>
@@ -377,7 +372,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
+            <a href="/tags/数据库-MYSQL-Docker/" rel="tag"><i class="fa fa-tag"></i> 数据库,MYSQL,Docker</a>
           
         </div>
       
@@ -390,8 +385,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/17/记录关于技术的思考/" rel="next" title="记录关于技术的思考">
-                <i class="fa fa-chevron-left"></i> 记录关于技术的思考
+              <a href="/2018/07/26/MySQL数据库备份/" rel="next" title="MySQL数据库备份">
+                <i class="fa fa-chevron-left"></i> MySQL数据库备份
               </a>
             
           </div>
@@ -399,10 +394,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/30/MySQL-Docker大小写敏感/" rel="prev" title="MySQL[Docker]大小写敏感">
-                MySQL[Docker]大小写敏感 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
