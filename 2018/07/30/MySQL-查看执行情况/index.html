@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据库,MYSQL," />
 
 
 
@@ -94,14 +94,18 @@
 
 
 
-<meta name="keywords" content="JAVA,unhappydepig">
-<meta property="og:type" content="website">
-<meta property="og:title" content="unhappydepig的个人博客">
-<meta property="og:url" content="http://unhappydepig.com/index.html">
+<meta name="description" content="mysql系统变量分为全局变量和会话变量，全局变量的修改影响到整个服务器，会话变量修改只影响当前的会话。  查看log日志是否开启show variables like ‘general_log’set GLOBAL general_log=’ON’;SET GLOBAL general_log_file = ‘/tmp/mysql.log’不使用的时候记得关掉，否则会大量占用磁盘空间。show">
+<meta name="keywords" content="数据库,MYSQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL-查看执行情况">
+<meta property="og:url" content="http://unhappydepig.com/2018/07/30/MySQL-查看执行情况/index.html">
 <meta property="og:site_name" content="unhappydepig的个人博客">
+<meta property="og:description" content="mysql系统变量分为全局变量和会话变量，全局变量的修改影响到整个服务器，会话变量修改只影响当前的会话。  查看log日志是否开启show variables like ‘general_log’set GLOBAL general_log=’ON’;SET GLOBAL general_log_file = ‘/tmp/mysql.log’不使用的时候记得关掉，否则会大量占用磁盘空间。show">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-30T10:02:31.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="unhappydepig的个人博客">
+<meta name="twitter:title" content="MySQL-查看执行情况">
+<meta name="twitter:description" content="mysql系统变量分为全局变量和会话变量，全局变量的修改影响到整个服务器，会话变量修改只影响当前的会话。  查看log日志是否开启show variables like ‘general_log’set GLOBAL general_log=’ON’;SET GLOBAL general_log_file = ‘/tmp/mysql.log’不使用的时候记得关掉，否则会大量占用磁盘空间。show">
 
 
 
@@ -130,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://unhappydepig.com/"/>
+  <link rel="canonical" href="http://unhappydepig.com/2018/07/30/MySQL-查看执行情况/"/>
 
 
 
 
 
-  <title>unhappydepig的个人博客</title>
+  <title>MySQL-查看执行情况 | unhappydepig的个人博客</title>
   
 
 
@@ -171,9 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -266,9 +268,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -298,9 +300,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/30/MySQL-查看执行情况/" itemprop="url">MySQL-查看执行情况</a></h1>
+          <h1 class="post-title" itemprop="name headline">MySQL-查看执行情况</h1>
         
 
         <div class="post-meta">
@@ -350,16 +350,12 @@
       
 
       
-        
-          
-            <p>mysql系统变量分为全局变量和会话变量，全局变量的修改影响到整个服务器，会话变量修改只影响当前的会话。</p>
+        <p>mysql系统变量分为全局变量和会话变量，全局变量的修改影响到整个服务器，会话变量修改只影响当前的会话。</p>
 <ol>
 <li>查看log日志是否开启<br>show variables like ‘general_log’<br>set GLOBAL general_log=’ON’;<br>SET GLOBAL general_log_file = ‘/tmp/mysql.log’<br>不使用的时候记得关掉，否则会大量占用磁盘空间。<br>show processlist命令查看了当前正在执行的sql语句,同时可以查看用户的当前连接</li>
 <li>查看慢日志<br>show variables like ‘%slow_query_log%’;<br>show variables like ‘long_query_time%’;设置慢日志记录什么样的SQL，默认10s<br>log-queries-not-using-indexes：未使用索引的查询也被记录到慢查询日志中,一般也开启这个变量<br>show status查看mysql运行状态（to learn）<br>比如查看mysql中有多少条慢查询记录： show global status like ‘%Slow_queries%’;</li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -374,267 +370,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/30/MySQL-Docker大小写敏感/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="unhappydepig">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="unhappydepig的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/30/MySQL-Docker大小写敏感/" itemprop="url">MySQL-Docker大小写敏感</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T10:50:47+08:00">
-                2018-07-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/数据库/" rel="tag"><i class="fa fa-tag"></i> 数据库</a>
           
-            
+            <a href="/tags/MYSQL/" rel="tag"><i class="fa fa-tag"></i> MYSQL</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>查看当前状态<br>查看当前mysql的大小写敏感配置<br>show global variables like ‘%lower_case%’;<br>+————————+——-+<br>| Variable_name          | Value |<br>+————————+——-+<br>| lower_case_file_system | ON    |<br>| lower_case_table_names | 0     |<br>+————————+——-+<br>lower_case_file_system<br>表示当前系统文件是否大小写敏感，只读参数，无法修改。<br>ON  大小写不敏感<br>OFF 大小写敏感 </li>
-<li>编辑docker内配置文件<br>进入docker的MySQL容器<br>编辑/etc/mysql/mysql.conf.d/mysqld.cnf文件，在[mysqld]下添加如下：<br>[mysqld]<br>lower_case_table_names=1<br>保存，退出容器；</li>
-</ul>
-<p>执行sudo docker restart MySQL ，重启MySQL即可查看：</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/26/MySQL数据库备份/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="unhappydepig">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="unhappydepig的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/26/MySQL数据库备份/" itemprop="url">MySQL数据库备份</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-26T10:00:47+08:00">
-                2018-07-26
-              </time>
+              <a href="/2018/07/30/MySQL-Docker大小写敏感/" rel="next" title="MySQL-Docker大小写敏感">
+                <i class="fa fa-chevron-left"></i> MySQL-Docker大小写敏感
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>需求：</p>
-<ol>
-<li>每天4点备份mysql数据；</li>
-<li>为节省空间，删除超过3个月的所有备份数据;</li>
-<li>删除超过7天的备份数据，保留3个月里的 10号 20号 30号的备份数据；</li>
-</ol>
-<p>#创建shell文件</p>
-<p>vim backup_mysql.sh</p>
-<p>mysqldump -uroot -p123456 –all-databases  &gt; /data/dbdata/mysqlbak/<code>date +%Y%m%d</code>.sql<br>find /data/dbdata/mysqlbak/ -mtime +7 -name ‘<em>[1-9].sql’ -exec rm -rf {} \;<br>find /data/dbdata/mysqlbak/ -mtime +92 -name ‘</em>.sql’ -exec rm -rf {} \;</p>
-<p>#创建定时任务<br>crontab –e<br>0 4 <em> </em> *  /data/dbdata/backup_mysql.sh</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -644,257 +411,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/17/记录关于技术的思考/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="unhappydepig">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="unhappydepig的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/17/记录关于技术的思考/" itemprop="url">记录关于技术的思考</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-17T23:34:47+08:00">
-                2018-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一直想搭建一个自己的blog,这个想法从自己刚开始学习JAVA到现在自己已经走入中年大叔行列。<br>之间断断续续用solo/wp写了一段时间。申请了一个翻墙用的服务器,然后frps在本机搭建了一个博客用。但是维护成本太高。服务器,应用,frps,一个都不能down。实在懒得再维护了。【翻墙服务器性能太差,实在折腾不起java应用了】<br>而后听到一个说法,所用的商业模式的成功其实和技术的关系是不大的。既然我已经折腾过自己部署博客了就不想在搭建/环境维护上花太多时间了。毕竟我的目的只是想记录下自己技术的笔记和关于技术的思考。用什么技术实现记录的过程也就不太重要了。<br>现在的方案:  </p>
-<ol>
-<li>开发工具 hexo+next主题</li>
-<li>内容编写 用markdownpad进行内容编辑</li>
-<li>内容发布 使用SVN进行源码的管理 jenkins 定时扫描【分钟级】提交的更新 并推送到github</li>
-<li>域名管理 域名托管在了CLOUDFLARE 并使用了 CLOUDFLARE的CDN【主要是搞不明白github自己的https要怎么配,懒得折腾了】  </li>
-</ol>
-<p>好了,现在环境已经搭建好了,给自己立一个flag,至少每周记录一下自己关于技术学习的思考或成功。</p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://unhappydepig.com/2018/07/16/My-New-Post/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="unhappydepig">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="unhappydepig的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/16/My-New-Post/" itemprop="url">My New Post</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T19:17:54+08:00">
-                2018-07-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>你好,世界</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -902,6 +423,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1131,10 +656,10 @@
 
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
